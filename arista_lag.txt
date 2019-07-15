@@ -1,0 +1,17 @@
+!
+vlan {}
+!
+interface Ethernet {}
+description {}
+logging event link-status
+flowcontrol send on
+channel-group {} mode active
+lacp timer fast
+!
+interface Port-Channel {}
+description {}
+switchport trunk allowed vlan add {}
+switchport mode trunk
+mlag {}
+spanning-tree portfast
+!
